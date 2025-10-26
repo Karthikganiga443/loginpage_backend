@@ -119,15 +119,7 @@ const Send_otp=async(req,res)=>{
         subject:"Password Reset OTP",
         text:`Your OTP for Password Reset is: ${otp}. It is valid for 5 mins`
     });
-    transporter.sendMail(mailOptions, (err, info) => {
-      if (err) {
-        console.error("Error sending email:", err);
-        return res.status(500).json({ issuccess: false, message: err.message });
-      } else {
-        console.log("Email sent:", info.response);
-        return res.status(200).json({ issuccess: true, message: "OTP sent Successfully" });
-      }
-    });
+    await transporter.sendMail(mailOptions);
 
     res.status(200).json({
         issuccess:true,
