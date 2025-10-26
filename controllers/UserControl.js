@@ -109,8 +109,8 @@ const Send_otp=async(req,res)=>{
     const transporter=nodemailer.createTransport({
         service:"gmail",
         auth:{
-            user:"karthikganiga461@gmail.com",
-            pass:"vqig waxy okyj qhbx"//app password
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_PASS
         }
     });
     const mailOptions=({
