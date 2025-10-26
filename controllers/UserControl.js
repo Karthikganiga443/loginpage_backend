@@ -110,7 +110,7 @@ const Send_otp=async(req,res)=>{
         service:"gmail",
         auth:{
             user:"karthikganiga461@gmail.com", 
-            pass: "vqig waxy okyj qhbx"
+            pass: "vnta nvwa vswm igjm"
         }
     });
     const mailOptions=({
